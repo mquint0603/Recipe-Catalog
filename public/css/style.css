@@ -1,4 +1,5 @@
-.navbar {
+
+.nav {
     background-color: #fa4e0e;
     margin-bottom: 15px;
 }
@@ -6,13 +7,19 @@
 .nav-text{
     color: white;
     /* font-style: italic; */
-    padding: 10px;
+    padding: 15px;
 }
 
 h1 {
     font-family: 'Playfair Display', serif;
     color:  #fa4e0e;
 
+}
+
+a, .main-p {
+    font-family: 'Playfair Display', serif;
+    color:  #fa4e0e;
+    font-size: 24px;
 }
 
 .main-text {
@@ -30,17 +37,26 @@ h1 {
 
 .welcome {
     /* background-color: #f5f1ba; */
-    height: 550px;
+    /* height: 550px; */
     margin-right: 0;
 }
 
   .header-image {
     position: relative;
-    height: 550px;
+    /* height: 550px; */
     overflow: hidden;
   }
 
+ .card-img-top {
+    width:100%;
+    height:auto;
+  }
+
   .header-image img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  input {
+      margin-bottom: 8px;
   }
