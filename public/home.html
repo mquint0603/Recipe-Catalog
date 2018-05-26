@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
@@ -20,10 +21,21 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 welcome">
                     <h1 class="main-text">Welcome</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quod id cum. Similique, facere ipsa deleniti corrupti nulla placeat. Magni laboriosam tempora eius vero, sint accusantium aspernatur cum id praesentium!</p>
+                    <p id="welcome-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quod id cum. Similique, facere ipsa deleniti corrupti nulla placeat. Magni laboriosam tempora eius vero, sint accusantium aspernatur cum id praesentium!</p>
                     <br>
-                    <button type="button" class="btn btn-lg btn-block"><span style="color:white">Post a recipe</span></button>
-                    <button type="button" class="btn btn-lg btn-block"><span style="color:white">Search</span></button>     
+                    <form action="">
+                            <label class="main-p" for="category">Category</label>
+                            <input class="form-control" id="category" type="text" placeholder="Search by Category">
+                            <label class="main-p" for="chef">Chef</label>
+                            <input class="form-control" id="chef" type="text" placeholder="Search by Author">
+                            <label class="main-p" for="keyword">Keyword</label>
+                            <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword">
+                            <br>
+                    </form> 
+                      
+                    <button type="button" id="postButton" class="btn btn-lg btn-block"><span style="color:white">Post a recipe</span></button>
+                    <button type="button" id="searchButton" class="btn btn-lg btn-block"><span style="color:white">Search</span></button>  
+
             </div>
             <div class="col-md-8 col-sm-12 header-image">
                 <img class="header-image" src="./images/pasta.jpg" alt="">
@@ -66,4 +78,12 @@
             </div>
     </div>
 </body>
+<script>
+    $("form").hide()
+    $("#searchButton").on("click", function(){
+        $("form").toggle()
+        $("#postButton").toggle()
+        $("#welcome-p").toggle()
+    })
+</script>
 </html>
