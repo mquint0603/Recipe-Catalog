@@ -62,4 +62,26 @@ module.exports = function(app) {
 
         })
     })
+
+    app.get("/recipes/:id", (req, res) => {
+        db.chef.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [db.Chef]
+            .then(function (dbRecipe) {
+                res.json(dbRecipe)
+            })
+        })
+    })
+
+    app.get("/recipes/:category", (req, res) =>{
+        db.Recipe.findAll({
+            where: {
+                category: req.params.category
+            },
+            include: [db.Chef]
+        }).then(function(dbRecipe) {
+            res.json(dbRecipe);
+    })
 };
