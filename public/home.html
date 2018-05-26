@@ -22,7 +22,7 @@
             <div class="col-md-4 col-sm-12 welcome">
                     <h1 class="main-text">Welcome</h1>
                     <p id="welcome-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quod id cum. Similique, facere ipsa deleniti corrupti nulla placeat. Magni laboriosam tempora eius vero, sint accusantium aspernatur cum id praesentium!</p>
-                    <br>
+                    
                     <form action="">
                             <label class="main-p" for="category">Category</label>
                             <input class="form-control" id="category" type="text" placeholder="Search by Category">
@@ -30,6 +30,8 @@
                             <input class="form-control" id="chef" type="text" placeholder="Search by Author">
                             <label class="main-p" for="keyword">Keyword</label>
                             <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword">
+                            <br>
+                            <button type="submit" class="btn btn-lg btn-block mb-2"><span style="color:white">Submit</span></button>
                             <br>
                     </form> 
                       
@@ -84,6 +86,7 @@
         $("form").toggle()
         $("#postButton").toggle()
         $("#welcome-p").toggle()
+        $("#searchButton").hide()
     })
 </script>
 </html>
