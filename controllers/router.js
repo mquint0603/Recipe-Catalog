@@ -49,4 +49,17 @@ module.exports = function(app) {
             res.json(dbChef);
         });
     })
+
+
+    app.get("/recipes", (req, res) => {
+        db.chef.findAll({}).then((data) => {
+            
+            var hbsObject = {
+                recipes: data
+            }
+    
+            res.render("index", hbsObject)
+
+        })
+    })
 };
