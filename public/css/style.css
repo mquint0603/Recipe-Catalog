@@ -1,0 +1,46 @@
+.navbar {
+    background-color: #fa4e0e;
+    margin-bottom: 15px;
+}
+
+.nav-text{
+    color: white;
+    /* font-style: italic; */
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    color:  #fa4e0e;
+
+}
+
+.main-text {
+    font-size: 60px;
+    font-style: italic;
+}
+
+/* .redtext {
+    color: #fa4e0e;
+} */
+
+.btn {
+    background-color: #e3d960
+}
+
+.welcome {
+    /* background-color: #f5f1ba; */
+    height: 550px;
+    margin-right: 0;
+}
+
+  .header-image {
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+  }
+
+  .header-image img {
+    width: auto;
+    height: 100%;
+  }
