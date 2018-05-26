@@ -4,39 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 navbar">
-                 <h1 class="nav-text">Recipe Catalog</h1>
-            </div>
 
-        </div>
+            <nav class="col-lg-12 nav">
+                 <h1 class="nav-text">Recipe Catalog</h1>
+            </nav>
         
         <div class="row">
             <div class="col-md-4 col-sm-12 welcome">
-                <!-- <div class="row"> -->
                     <h1 class="main-text">Welcome</h1>
-                    <br>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quod id cum. Similique, facere ipsa deleniti corrupti nulla placeat. Magni laboriosam tempora eius vero, sint accusantium aspernatur cum id praesentium!</p>
                     <br>
-                    <!-- </div> -->
-                <!-- <div class="row"> -->
-                        <button type="button" class="btn btn-lg btn-block"><span style="color:white">Post a recipe</span></button>
-                        <button type="button" class="btn btn-lg btn-block"><span style="color:white">Search</span></button>
-                <!-- </div> -->
-
+                    <button type="button" class="btn btn-lg btn-block"><span style="color:white">Post a recipe</span></button>
+                    <button type="button" class="btn btn-lg btn-block"><span style="color:white">Search</span></button>     
             </div>
             <div class="col-md-8 col-sm-12 header-image">
-                <img src="./images/pasta.jpg" alt="">
+                <img class="header-image" src="./images/pasta.jpg" alt="">
             </div>
         </div>
+        <br>
+        <div class="row">
+                <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text"><a href="">Salads</a></p>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/dessert.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text"><a href="">Desserts</a></p>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/soup.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text"><a href="">Soups and Stews</a></p>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-3">
+                        <div class="card">
+                            <img class="card-img-top" src="./images/appetizer.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text"><a href="">Appetizers</a></p>
+                            </div>
+                        </div>
+                </div>
+            </div>
     </div>
-    
 </body>
 </html>
