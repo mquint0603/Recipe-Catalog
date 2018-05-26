@@ -36,7 +36,9 @@ module.exports = function(sequelize, DataTypes) {
         }
       });
     };
-  
+
+    //Recipe.belongsToMany(Keywords, { through: 'RecipeKeyword' });
+
     return Recipe;
   };
   

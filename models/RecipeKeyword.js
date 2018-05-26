@@ -1,0 +1,1 @@
+var RecipeKeyword = sequelize.define("RecipeKeyword");
