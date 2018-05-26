@@ -52,8 +52,9 @@ module.exports = function(app) {
 
 
     app.get("/recipes", (req, res) => {
-        db.Recipes.findAll({}).then((data) => {
-            
+
+        db.Recipe.findAll({}).then((data) => {
+
             var hbsObject = {
                 recipes: data
             }
@@ -62,27 +63,25 @@ module.exports = function(app) {
 
         })
     })
+      
+    // app.get("/recipes/:id", (req, res) => {
+    //     db.chef.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         }
+    //         .then(function (dbRecipe) {
+    //             res.json(dbRecipe)
+    //         })
+    //     })
+    // })
 
-    app.get("/recipes/:id", (req, res) => {
-        db.Recipes.findOne({
-            where: {
-                id: req.params.id
-            },
-            include: [db.Chef]
-            .then(function (dbRecipe) {
-                res.json(dbRecipe)
-            })
-        })
-    })
+    // app.get("/recipes/:category", (req, res) => {
+    //     db.Recipe.findAll({
+    //         where: {
+    //             category: req.params.category
+    //         }
+    //     }).then(function(dbRecipe) {
+    //         res.json(dbRecipe);
+    // })
+}
 
-    app.get("/recipes/:category", (req, res) => {
-        db.Recipe.findAll({
-            where: {
-                category: req.params.category
-            },
-            include: [db.Chef]
-        }).then(function(dbRecipe) {
-            res.json(dbRecipe);
-        })
-    })
-};
