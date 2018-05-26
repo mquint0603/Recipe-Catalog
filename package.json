@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lwerner27/Recipe-Catalog/issues"
   },
-  "homepage": "https://github.com/lwerner27/Recipe-Catalog#readme"
+  "homepage": "https://github.com/lwerner27/Recipe-Catalog#readme",
+  "dependencies": {
+    "request": "^2.87.0"
+  }
 }
