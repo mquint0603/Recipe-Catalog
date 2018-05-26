@@ -52,7 +52,7 @@ module.exports = function(app) {
 
 
     app.get("/recipes", (req, res) => {
-        db.chef.findAll({}).then((data) => {
+        db.Recipes.findAll({}).then((data) => {
             
             var hbsObject = {
                 recipes: data
@@ -64,7 +64,7 @@ module.exports = function(app) {
     })
 
     app.get("/recipes/:id", (req, res) => {
-        db.chef.findOne({
+        db.Recipes.findOne({
             where: {
                 id: req.params.id
             },
@@ -75,7 +75,7 @@ module.exports = function(app) {
         })
     })
 
-    app.get("/recipes/:category", (req, res) =>{
+    app.get("/recipes/:category", (req, res) => {
         db.Recipe.findAll({
             where: {
                 category: req.params.category
@@ -83,5 +83,6 @@ module.exports = function(app) {
             include: [db.Chef]
         }).then(function(dbRecipe) {
             res.json(dbRecipe);
+        })
     })
 };
