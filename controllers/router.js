@@ -64,24 +64,25 @@ module.exports = function(app) {
         })
     })
       
-    // app.get("/recipes/:id", (req, res) => {
-    //     db.chef.findOne({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //         .then(function (dbRecipe) {
-    //             res.json(dbRecipe)
-    //         })
-    //     })
-    // })
+    app.get("/recipes/:id", (req, res) => {
+        db.chef.findOne({
+            where: {
+                id: req.params.id
+            }
+            .then(function (dbRecipe) {
+                res.json(dbRecipe)
+            })
+        })
+    })
 
-    // app.get("/recipes/:category", (req, res) => {
-    //     db.Recipe.findAll({
-    //         where: {
-    //             category: req.params.category
-    //         }
-    //     }).then(function(dbRecipe) {
-    //         res.json(dbRecipe);
-    // })
+    app.get("/recipes/:category", (req, res) => {
+        db.Recipe.findAll({
+            where: {
+                category: req.params.category
+            }
+        }).then(function(dbRecipe) {
+            res.json(dbRecipe);
+        })
+    })
 }
 
