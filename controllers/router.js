@@ -65,7 +65,7 @@ module.exports = function(app) {
     })
       
     app.get("/recipes/:id", (req, res) => {
-        db.chef.findOne({
+        db.Recipe.findOne({
             where: {
                 id: req.params.id
             }
