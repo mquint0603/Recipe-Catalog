@@ -1,9 +1,14 @@
 var db = require("../models");
 
+// F2F API testing 
+// var api = require("../F2F_api.js")
+// var query = "mac and cheese"
+
 module.exports = function(app) {
 
     app.get("/api/recipes", function (req, res) {
        var query = {};
+
        if(req.query.chef_id) {
            query.ChefID = req.query.chef_id;
        }
@@ -14,6 +19,7 @@ module.exports = function(app) {
        }).then(function(dbRecipe) {
            res.json(dbRecipe);
        });
+
     });
 
     app.get("/api/recipes/:id", function (req, res) {
@@ -86,3 +92,4 @@ module.exports = function(app) {
     })
 }
 
+// module.exports = query;
