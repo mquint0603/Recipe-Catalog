@@ -1,9 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
-    var Keyword = sequelize.define("Keywords", {
-        name: DataTypes.STRING,
+
+    var Keyword = sequelize.define("Keyword", {
+      keyword: DataTypes.STRING,
+    }, {
+      timestamps: false
     });
-  
-    //Keyword.hasMany(Recipe, { through: 'RecipeKeyword' });
+
+    Keyword.associate = function(models) {
+      models.Keyword.belongsToMany(models.Recipe, {
+          through: "recipe_keyword", 
+          foreignKey: 'KeywordId'
+      })
+    };
+
     return Keyword;
+
 };
   

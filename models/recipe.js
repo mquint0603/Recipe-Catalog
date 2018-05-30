@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Recipe = sequelize.define("Recipe", {
+
       title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -7,38 +8,44 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
+
       ingredients: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
       },
+
       directions: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
       },
+      
       description: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
       },
+
       category: {
         type: DataTypes.STRING,
         allowNull: false,
         len: [1]
       }
+
+    }, {
+      timestamps: false
     });
   
+
     Recipe.associate = function(models) {
-      Recipe.belongsTo(models.Chef, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
+      models.Recipe.belongsToMany(models.Keyword, {
+          through: "recipe_keyword", 
+          foreignKey: 'RecipeId'
+      })
     };
 
-    //Recipe.belongsToMany(Keywords, { through: 'RecipeKeyword' });
-
     return Recipe;
+
   };
   
