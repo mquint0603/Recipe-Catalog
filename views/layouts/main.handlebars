@@ -21,6 +21,9 @@
                  <h1 class="nav-text">Recipe Catalog</h1>
                  <ul class="nav justify-content-end">
                         <li class="nav-item">
+                            <a class="nav-link" href="/"><span style="color:white">Home</span></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
                         </li>
                         <li class="nav-item">
@@ -73,7 +76,13 @@
                             <input class="form-control" id="category" type="text" placeholder="">
 
                             <label class="accent" for="category">Category</label>
-                            <input class="form-control" id="category" type="text" placeholder="Search by Category">
+                            <select class="form-control" id="category" type="text" placeholder="Select Category">
+                            <option>Appetizers</option>
+                            <option>Desserts</option>
+                            <option>Pasta</option>
+                            <option>Salads</option>
+                            <option>Entrees</option>
+                            </select>
 
                             <label class="accent" for="chef">Chef</label>
                             <input class="form-control" id="chef" type="text" placeholder="Your name">
@@ -82,10 +91,10 @@
                             <input class="form-control" id="keyword" type="text" placeholder="Separate keywords with commas">
 
                             <label for="ingredients" class="col-form-label">Ingredients:</label>
-                            <textarea class="form-control" id="ingredients"></textarea>
+                            <textarea class="form-control" id="ingredients" style="height:250px;"></textarea>
 
                             <label for="instructions" class="col-form-label">Instructions:</label>
-                            <textarea class="form-control" id="instructions"></textarea>
+                            <textarea class="form-control" id="instructions" style="height:250px;"></textarea>
 
                             <br>
                             <button type="submit" class="btn btn-lg btn-block mb-2" id="postSubmitButton"><span style="color:white">Submit</span></button>
