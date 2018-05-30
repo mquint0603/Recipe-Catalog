@@ -1,24 +1,21 @@
 var db = require("../models");
 
-// F2F API testing 
-// var api = require("../F2F_api.js")
-// var query = "mac and cheese"
-
 module.exports = function(app) {
 
+    // ===========================================================
+    // API ROUTES
+    // ===========================================================
+    
+    // Gets all Recipes and their Keywords
     app.get("/api/recipes", function (req, res) {
-       var query = {};
 
-       if(req.query.chef_id) {
-           query.ChefID = req.query.chef_id;
-       }
-
-       db.Recipe.findAll({
-           where: query,
-           include: [db.Chef]
-       }).then(function(dbRecipe) {
-           res.json(dbRecipe);
-       });
+        db.Recipe.findAll({
+            include: [
+                db.Keyword
+            ]
+        }).then((data) => {
+            res.json(data)
+        })
 
     });
 
@@ -27,9 +24,11 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             },
-            include: [db.Chef]
-        }).then(function(dbRecipe) {
-            res.json(dbRecipe);
+            include: [
+                db.Keyword
+            ]
+        }).then((data) => {
+            res.json(data);
         });
     });
 
@@ -38,17 +37,29 @@ module.exports = function(app) {
             where: {
                 category: req.params.category
             },
-            include: [db.Chef]
+            include: [
+                db.Keyword
+            ]
         }).then(function(dbRecipe) {
             res.json(dbRecipe);
         });
     });
 
-    app.post("/api/recipes", function(req,res) {
-        db.Recipe.create(req.body).then(function(dbRecipe) {
-            res.json(dbRecipe);
-        });
-    });
+    app.get("/api/recipes/keyword/:keyword", (req, res) => {
+
+        db.Recipe.findAll({
+            include: [
+                {
+                    model: db.Keyword, 
+                    where: {
+                        keyword: req.params.keyword
+                    }
+                }
+            ]
+        }).then(data => {
+            res.json(data)
+        })
+    })
 
     app.post("/api/chef", function(req, res) {
         db.Chef.create(req.body).then(function(dbChef) {
@@ -56,6 +67,9 @@ module.exports = function(app) {
         });
     })
 
+    // ===========================================================
+    // HTML ROUTES
+    // ===========================================================
 
     app.get("/recipes", (req, res) => {
 
@@ -90,6 +104,5 @@ module.exports = function(app) {
             res.json(dbRecipe);
         })
     })
-}
 
-// module.exports = query;
+}
