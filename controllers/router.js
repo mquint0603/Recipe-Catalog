@@ -93,6 +93,7 @@ module.exports = function(app) {
         }).then(data => {
             res.json(data)
         })
+
     })
 
     // ===========================================================
@@ -112,6 +113,27 @@ module.exports = function(app) {
     
             res.render("index", hbsObject)
 
+        })
+    })
+
+    // Gets and renders list of recipes based on keyword searched
+    app.get("/recipes/keyword/:keyword", (req, res) => {
+        db.Recipe.findAll({
+            include: [
+                {
+                    model: db.Keyword, 
+                    where: {
+                        keyword: req.params.keyword
+                    }
+                }
+            ]
+        }).then(data => {
+
+            var hbsObject = {
+                recipes: data
+            }
+
+            res.render("index", hbsObject)
         })
     })
 

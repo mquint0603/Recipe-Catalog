@@ -28,6 +28,7 @@ $(document).ready(function() {
     })
 
     $("#searchSubmitButton").on("click", function(event) {
+        event.preventDefault()
         var searchQuery = {
             category: $("#search-category").val(),
             search: $("#search-box").val().trim()
@@ -45,6 +46,7 @@ $(document).ready(function() {
         //         location.reload();
         //     }
         // );
-        $(location).attr("href", api/recipe/keyword/cheese)
+        console.log("the button was clicked")
+        window.location.replace("/api/recipes/keyword/cheese");
     })
 })
