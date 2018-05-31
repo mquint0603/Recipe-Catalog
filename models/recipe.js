@@ -45,6 +45,14 @@ module.exports = function(sequelize, DataTypes) {
       })
     };
 
+    Recipe.associate = function(models) {
+      models.Recipe.belongsTo(models.Chef, {
+        foreignKey: {
+          allowNull: false
+        }
+      })
+    }
+
     return Recipe;
 
   };
