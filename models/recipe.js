@@ -43,6 +43,13 @@ module.exports = function(sequelize, DataTypes) {
           through: "recipe_keyword", 
           foreignKey: 'RecipeId'
       })
+
+      models.Recipe.belongsTo(models.Chef, {
+        foreignKey: {
+            allowNull: false
+        }
+      })
+
     };
 
     return Recipe;
