@@ -19,6 +19,38 @@ module.exports = function(app) {
 
     });
 
+    // Posts the new recipe to the database
+    app.post("/api/recipes", (req, res) => {
+
+        let keywords = req.body.keywords
+
+        db.Recipe.create({
+    
+            title: req.body.title,
+            ingredients: req.body.ingredients,
+            directions: req.body.directions,
+            description: req.body.description,
+            category: req.body.category
+    
+        }).then((recipe) => {
+    
+            for (let i = 0; i < keywords.length; i++ ) {
+    
+                db.Keyword.findOrCreate({
+                    where: {
+                        keyword: keywords[i]
+                    }
+                }).then((keyword) => {
+                    recipe.addKeyword(keyword[0])
+                })
+    
+            }
+    
+            res.send("you have added a song to the database")
+    
+        })
+    })
+    // Gets a specific recipe by its ID
     app.get("/api/recipes/:id", function (req, res) {
         db.Recipe.findOne({
             where: {
@@ -32,6 +64,7 @@ module.exports = function(app) {
         });
     });
 
+    // Gets a list of recipes by category
     app.get("/api/recipes/:category", function(req,res) {
         db.Recipe.findAll({
             where: {
@@ -45,6 +78,7 @@ module.exports = function(app) {
         });
     });
 
+    // Gets a list of recipes that share the specified keyword
     app.get("/api/recipes/keyword/:keyword", (req, res) => {
 
         db.Recipe.findAll({
@@ -61,50 +95,44 @@ module.exports = function(app) {
         })
     })
 
-    app.post("/api/chef", function(req, res) {
-        db.Chef.create(req.body).then(function(dbChef) {
-            res.json(dbChef);
-        });
-    })
-
     // ===========================================================
     // HTML ROUTES
     // ===========================================================
 
-    app.get("/recipes", (req, res) => {
+    // app.get("/recipes", (req, res) => {
 
-        db.Recipe.findAll({}).then((data) => {
+    //     db.Recipe.findAll({}).then((data) => {
 
-            var hbsObject = {
-                recipes: data
-            }
+    //         var hbsObject = {
+    //             recipes: data
+    //         }
 
-            console.log(hbsObject)
+    //         console.log(hbsObject)
     
-            res.render("index", hbsObject)
+    //         res.render("index", hbsObject)
 
-        })
-    })
+    //     })
+    // })
       
-    app.get("/recipes/:id", (req, res) => {
-        db.Recipe.findOne({
-            where: {
-                id: req.params.id
-            }
-            .then(function (dbRecipe) {
-                res.json(dbRecipe)
-            })
-        })
-    })
+    // app.get("/recipes/:id", (req, res) => {
+    //     db.Recipe.findOne({
+    //         where: {
+    //             id: req.params.id
+    //         }
+    //         .then(function (dbRecipe) {
+    //             res.json(dbRecipe)
+    //         })
+    //     })
+    // })
 
-    app.get("/recipes/:category", (req, res) => {
-        db.Recipe.findAll({
-            where: {
-                category: req.params.category
-            }
-        }).then(function(dbRecipe) {
-            res.json(dbRecipe);
-        })
-    })
+    // app.get("/recipes/:category", (req, res) => {
+    //     db.Recipe.findAll({
+    //         where: {
+    //             category: req.params.category
+    //         }
+    //     }).then(function(dbRecipe) {
+    //         res.json(dbRecipe);
+    //     })
+    // })
 
 }
