@@ -9,8 +9,9 @@
     <!-- {{!-- Custom Style --}} -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- {{!-- JQuery Link --}} -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>\
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- {{!-- Clinet.js Link --}} -->
+    <script type="text/javascript" src="./javascript/client.js"></script>
 </head>
 <body>
     <div class="container">
@@ -47,8 +48,8 @@
                             <br>
                     </form>  -->
                       
-                    <button type="button" id="postButton" class="btn btn-lg btn-block" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
-                    <button type="button" id="searchButton" class="btn btn-lg btn-block" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
+                    <button type="button" id="postButton" class="btn btn-lg btn-block post-recipe-btn" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
+                    <button type="button" id="searchButton" class="btn btn-lg btn-block search-btn" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
 
             </div>
             <div class="col-md-8 col-sm-12 header-image">
@@ -115,7 +116,7 @@
                             <option value="keyword">Keyword</option>
                         </select>
                         <br>
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" id="search-box" class="form-control" placeholder="Search">
                         <br>
                         <button type="submit" class="btn btn-lg btn-block mb-2" id="searchSubmitButton"><span style="color:white">Submit</span></button>
                     </form>  
@@ -139,7 +140,7 @@
             <div class="modal-body">
                     <form action="">
                         <label class="accent" for="title">Title</label>
-                        <input class="form-control" id="category" type="text" placeholder="">
+                        <input class="form-control" id="title" type="text" placeholder="Title">
 
                         <label class="accent" for="category">Category</label>
                         <select class="form-control" id="category" type="text" placeholder="Select Category">
@@ -156,11 +157,14 @@
                         <label class="accent" for="keyword">Keywords</label>
                         <input class="form-control" id="keyword" type="text" placeholder="Separate keywords with commas">
 
-                        <label for="ingredients" class="col-form-label">Ingredients:</label>
+                        <label for="ingredients" class="col-form-label accent">Ingredients:</label>
                         <textarea class="form-control" id="ingredients" style="height:250px;"></textarea>
 
-                        <label for="instructions" class="col-form-label">Instructions:</label>
-                        <textarea class="form-control" id="instructions" style="height:250px;"></textarea>
+                        <label for="directions" class="col-form-label accent">Directions:</label>
+                        <textarea class="form-control" id="directions" style="height:250px;"></textarea>
+
+                        <label for="description" class="col-form-label accent">Description:</label>
+                        <textarea class="form-control" id="description" style="height:250px;"></textarea>
 
                         <br>
                         <button type="submit" class="btn btn-lg btn-block mb-2" id="postSubmitButton"><span style="color:white">Submit</span></button>
