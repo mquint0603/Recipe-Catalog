@@ -32,16 +32,19 @@ $(document).ready(function() {
             category: $("#search-category").val(),
             search: $("#search-box").val().trim()
         }
+        // var ajaxSearches = ["/api/recipes/keyword/", "/api/recipes/chef/", "/api/recipes/category/"]
 
-        $.ajax("/api/recipes/keyword/" + searchQuery.search, {
-            type: "GET",
-            data: searchQuery
-            }).then(
-            function() {
-                console.log("new search query");
+        // console.log(searchQuery.category)
+        // $.ajax("/api/recipes/" + searchQuery.category + "/" + searchQuery.search, {
+        //     type: "GET",
+        //     data: searchQuery
+        //     }).then(
+        //     function() {
+        //         console.log("new search query");
                
-                location.reload();
-            }
-        );
+        //         location.reload();
+        //     }
+        // );
+        $(location).attr("href", api/recipe/keyword/cheese)
     })
 })
