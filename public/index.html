@@ -102,12 +102,20 @@
             </div>
             <div class="modal-body">
                     <form action="">
-                        <label class="accent" for="category">Category</label>
+                        <!-- <label class="accent" for="category">Category</label>
                         <input class="form-control" id="category" type="text" placeholder="Search by Category">
                         <label class="accent" for="chef">Chef</label>
                         <input class="form-control" id="chef" type="text" placeholder="Search by Author">
                         <label class="accent" for="keyword">Keyword</label>
-                        <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword">
+                        <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword"> -->
+                        <h3 class="main-text">Please select</h3>
+                        <select id="search-category" class="form-control">
+                            <option value="category">Category</option>
+                            <option value="chef">Chef</option>
+                            <option value="keyword">Keyword</option>
+                        </select>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Search">
                         <br>
                         <button type="submit" class="btn btn-lg btn-block mb-2" id="searchSubmitButton"><span style="color:white">Submit</span></button>
                     </form>  
