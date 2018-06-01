@@ -63,3 +63,12 @@ h1, h3 {
   ul {
       float: right;
   }
+
+  .sidebar {
+      background-image: url("../images/sidebar-01.png");
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      /* overflow: hidden; */
+      min-height: 900px;
+      width: 100%;
+  }

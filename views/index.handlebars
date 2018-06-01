@@ -1,12 +1,23 @@
 <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-8">
+            <h1 class="main-text">Search Results</h1>
+            <br>
+            {{#each recipes}}
+                <div class="row">  
+                    <div class="col-sm-12">
+                        <a href="/api/recipes/{{id}}"><h3 class="accent">{{title}}</h3></a>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+                <br>
+                <hr>
+            {{/each}}
 
-    {{#each recipes}}
-        <div class="row">  
-            <div class="col-sm-12 col-md-12">
-                <a href="/api/recipes/{{id}}"><h3>{{title}}</h3></a>
-                <p>{{description}}</p>
-            </div>
         </div>
-    {{/each}}
+        <div class="col-sm-3 col-md-4 sidebar">
+            {{!-- <img class="sidebar-image" src="" alt="sidebar"> --}}
+        </div>
+    </div>
 
 </div>
