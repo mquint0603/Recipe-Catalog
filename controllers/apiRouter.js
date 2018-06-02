@@ -146,7 +146,7 @@ module.exports = function(app) {
         
                 }
         
-                res.send("you have added a recipe to the database")
+                res.json(recipe.dataValues)
         
             })
         })
