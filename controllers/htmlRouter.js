@@ -9,7 +9,13 @@ module.exports = function(app) {
     // Renders the list of all recipes on index.handlebars
     app.get("/recipes", (req, res) => {
 
-        db.Recipe.findAll({}).then((data) => {
+        db.Recipe.findAll({
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then((data) => {
 
             var hbsObject = {
                 recipes: data
@@ -31,6 +37,9 @@ module.exports = function(app) {
                     where: {
                         keyword: req.params.keyword
                     }
+                },
+                {
+                    model: db.Chef
                 }
             ]
         }).then(data => {
@@ -56,7 +65,7 @@ module.exports = function(app) {
                     ChefId: chef.dataValues.id
                 },
                 include: [
-                    {model: db.Chef}
+                    { model: db.Chef }
                 ]
             }).then((recipes) => {
 
@@ -76,7 +85,12 @@ module.exports = function(app) {
         db.Recipe.findAll({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
         }).then(recipe => {
 
             var hbsObject = {
@@ -87,8 +101,26 @@ module.exports = function(app) {
         })
     })
 
-    // app.get("/recipes/category/category", (req, res) => {
-    //     console.log(req.params.category)
-    // })
+    app.get("/recipes/category/:category", (req, res) => {
+
+        db.Recipe.findAll({
+            where: {
+                category: req.params.category
+            },
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then(recipes => {
+            
+            var hbsObject = {
+                recipes: recipes
+            }
+
+            res.render("index", hbsObject)
+
+        })
+    })
 
 }
