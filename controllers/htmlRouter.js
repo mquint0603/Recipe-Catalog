@@ -43,4 +43,52 @@ module.exports = function(app) {
         })
     })
 
+    app.get("/recipes/chef/:chef", (req, res) => {
+        console.log(req.params.chef)
+
+        db.Chef.findOne({
+            where: {
+                username: req.params.chef
+            }
+        }).then(chef => {
+            db.Recipe.findAll({
+                where: {
+                    ChefId: chef.dataValues.id
+                },
+                include: [
+                    {model: db.Chef}
+                ]
+            }).then((recipes) => {
+
+                var hbsObject = {
+                    recipes: recipes
+                }
+
+                res.render("index", hbsObject)
+
+            })
+
+        })
+
+    })
+
+    app.get("/recipes/id/:id", (req, res) => {
+        db.Recipe.findAll({
+            where: {
+                id: req.params.id
+            }
+        }).then(recipe => {
+
+            var hbsObject = {
+                recipe: recipe[0].dataValues
+            }
+
+            res.render("recipe", hbsObject)
+        })
+    })
+
+    // app.get("/recipes/category/category", (req, res) => {
+    //     console.log(req.params.category)
+    // })
+
 }
