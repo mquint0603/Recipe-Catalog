@@ -1,7 +1,13 @@
 $(document).ready(() =>{
 
-    var favs = {
-        favorites: [1, 2, 3]
+    let localStorage = window.localStorage
+
+    let favs;
+
+    if (localStorage.favs) {
+        favs = JSON.parse(localStorage.favs)
+    } else {
+        alert("Sorry you don't have any favorites currently")
     }
 
     $.ajax("/api/recipes/favorites", {
