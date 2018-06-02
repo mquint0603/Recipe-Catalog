@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    var favorites = [];
 
     $("#postSubmitButton").on("click", function(event) {
 
@@ -38,5 +39,9 @@ $(document).ready(function() {
         }
        
         window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
+    })
+
+    $("#favorite").on("click", function(event) {
+        favorites.push[data-id];
     })
 })
