@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    
     $("#postSubmitButton").on("click", function(event) {
 
         event.preventDefault();
@@ -40,4 +39,9 @@ $(document).ready(function() {
        
         window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
     })
+
+    $("#favorite").on("click", function(event) {
+        favorites.push[data-id];
+    })
+    
 })
