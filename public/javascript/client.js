@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-    var favorites = [];
-
     $("#postSubmitButton").on("click", function(event) {
 
         event.preventDefault();
@@ -33,6 +31,7 @@ $(document).ready(function() {
 
     $("#searchSubmitButton").on("click", function(event) {
         event.preventDefault()
+
         var searchQuery = {
             category: $("#search-category").val(),
             search: $("#search-box").val().trim()
