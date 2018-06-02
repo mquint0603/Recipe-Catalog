@@ -153,4 +153,22 @@ module.exports = function(app) {
         })
 
     })
+
+    app.post("/recipes/favorites", (req, res) => {
+        let favorites = req.body.favorites
+
+
+        db.Recipe.findAll({
+            where: {
+                id: favorites
+            },
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then(recipes => {
+            res.json(recipes)
+        })
+    })
 }
