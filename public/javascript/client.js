@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 
     $("#postSubmitButton").on("click", function(event) {
+
+        event.preventDefault();
         
         let keywordString = $("#keyword").val().trim();
         let keywords = keywordString.split(",")
@@ -20,9 +22,10 @@ $(document).ready(function() {
         type: "POST",
         data: recipePost
         }).then(
-        function() {
-            console.log("new recipe posted");
+        function(data) {
+            console.log(data);
 
+            window.location.replace("/recipes/id/" + data.id)
         }
         );
     })
@@ -33,8 +36,7 @@ $(document).ready(function() {
             category: $("#search-category").val(),
             search: $("#search-box").val().trim()
         }
-
-        console.log("the button was clicked")
-        window.location.replace("/api/recipes/keyword/cheese");
+       
+        window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
     })
 })
