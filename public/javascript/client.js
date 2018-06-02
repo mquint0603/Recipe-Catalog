@@ -23,6 +23,7 @@ $(document).ready(function() {
         function() {
             console.log("new recipe posted");
 
+            window.location.replace("/recipes/")
         }
         );
     })
@@ -34,7 +35,16 @@ $(document).ready(function() {
             search: $("#search-box").val().trim()
         }
 
-        console.log("the button was clicked")
-        window.location.replace("/api/recipes/keyword/cheese");
+        console.log(searchQuery.category)
+        $.ajax("api/recipes/" + searchQuery.category + "/" + searchQuery.search, {
+            type: "GET"
+        }).then(
+            function(data) {
+                console.log(data);
+
+                // window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
+            }
+        )
+        
     })
 })
