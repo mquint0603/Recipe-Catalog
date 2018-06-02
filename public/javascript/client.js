@@ -65,4 +65,20 @@ $(document).ready(function() {
 
     })
     
+    $(".search-button").on("click", function() {
+        $("#search-box").hide()
+        $("#search-options").hide()
+    })
+    
+    $("#search-category").on("click", function(){
+
+        if($("#search-category").val() == "category") {
+            $("#search-box").hide()
+            $("#search-options").show()
+        } else {
+            $("#search-box").show()
+            $("#search-options").hide()
+        }
+    })
+
 })
