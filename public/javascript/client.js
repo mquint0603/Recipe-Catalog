@@ -44,4 +44,5 @@ $(document).ready(function() {
     $("#favorite").on("click", function(event) {
         favorites.push[data-id];
     })
+    
 })

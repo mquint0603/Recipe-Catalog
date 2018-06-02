@@ -154,7 +154,7 @@ module.exports = function(app) {
 
     })
 
-    app.post("/recipes/favorites", (req, res) => {
+    app.post("api/recipes/favorites", (req, res) => {
         let favorites = req.body.favorites
 
 
