@@ -8,9 +8,10 @@
                     <div class="col-sm-12">
                          
                         <a href="/recipes/id/{{id}}"><h3 class="accent">{{title}}</h3></a>
-                        <p>{{description}}   <button type="button" id="favorite" data-id="{{id}}" class="btn">
-                            <span class="glyphicon glyphicon-heart"></span>
-                        </button></p>
+                        <p>{{description}}</p>
+                        <button type="button" id="favorite" class="btn" aria-label="Heart">
+                            <i class="fas fa-heart"></i> Add to favorites
+                        </button>
                     </div>
                 </div>
                 {{!-- <br> --}}
