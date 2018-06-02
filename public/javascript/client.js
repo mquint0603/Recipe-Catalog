@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    var favorites = [];
 
     $("#postSubmitButton").on("click", function(event) {
         
@@ -36,5 +37,9 @@ $(document).ready(function() {
 
         console.log("the button was clicked")
         window.location.replace("/api/recipes/keyword/cheese");
+    })
+
+    $("#favorite").on("click", function(event) {
+        favorites.push[data-id];
     })
 })
