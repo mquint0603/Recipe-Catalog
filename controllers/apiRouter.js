@@ -95,8 +95,6 @@ module.exports = function(app) {
 
     })
 
-    // app.get(chef2git ==)
-
     // ==============================================
     // Post Requests
     // ==============================================
@@ -154,8 +152,10 @@ module.exports = function(app) {
 
     })
 
-    app.post("api/recipes/favorites", (req, res) => {
-        let favorites = req.body.favorites
+    app.post("/api/recipes/favorites", (req, res) => {
+        let favorites = req.body.favorites.favorites
+
+        console.log(favorites)
 
 
         db.Recipe.findAll({

@@ -1,10 +1,14 @@
 $(document).ready(() =>{
 
-    alert("Hello World")
+    var favs = {
+        favorites: [1, 2, 3]
+    }
 
-    $.ajax("api/recipes/favorites", {
+    $.ajax("/api/recipes/favorites", {
         type: "POST",
-        data: [1, 2, 5]
+        data: {
+            favorites: favs
+        }
     }).then(res => {
         console.log(res)
     })
