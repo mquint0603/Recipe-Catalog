@@ -12,7 +12,8 @@ $(document).ready(function() {
             directions: $("#directions").val().trim(),
             description: $("#description").val().trim(),
             category: $("#category").val().trim(),
-            keywords: keywords
+            keywords: keywords,
+            username: $("#chef").val().tri()
         }
 
         $.ajax("/api/recipes", {
@@ -22,7 +23,6 @@ $(document).ready(function() {
         function() {
             console.log("new recipe posted");
 
-            location.reload();
         }
         );
     })
@@ -33,19 +33,7 @@ $(document).ready(function() {
             category: $("#search-category").val(),
             search: $("#search-box").val().trim()
         }
-        // var ajaxSearches = ["/api/recipes/keyword/", "/api/recipes/chef/", "/api/recipes/category/"]
 
-        // console.log(searchQuery.category)
-        // $.ajax("/api/recipes/" + searchQuery.category + "/" + searchQuery.search, {
-        //     type: "GET",
-        //     data: searchQuery
-        //     }).then(
-        //     function() {
-        //         console.log("new search query");
-               
-        //         location.reload();
-        //     }
-        // );
         console.log("the button was clicked")
         window.location.replace("/api/recipes/keyword/cheese");
     })
