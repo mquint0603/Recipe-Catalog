@@ -30,9 +30,9 @@ module.exports = function(app) {
     // Gets a specific recipe by its ID
     app.get("/api/recipes/id/:id", function (req, res) {
         db.Recipe.findOne({
-            attributes: {
-                exclude: ["ChefId"]
-            },
+            // attributes: {
+            //     exclude: ["ChefId"]
+            // },
             where: {
                 id: req.params.id
             },
@@ -147,6 +147,7 @@ module.exports = function(app) {
                 }
         
                 res.json(recipe.dataValues)
+
         
             })
         })

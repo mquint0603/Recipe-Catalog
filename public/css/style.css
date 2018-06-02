@@ -21,6 +21,10 @@ h1, h3 {
     font-size: 24px;
 }
 
+.accent-large {
+    font-size: 36px;
+}
+
 .main-text {
     font-size: 60px;
     font-style: italic;
@@ -71,4 +75,19 @@ h1, h3 {
       /* overflow: hidden; */
       min-height: 900px;
       width: 100%;
+  }
+
+  .image-holder {
+    /* background-image: url("../images/pasta.jpg"); */
+    height: 300px;
+    overflow: hidden;
+  }
+  .card-img-top {
+      width: 100%;
+  }
+
+  #favorite {
+      background-color: #fa4e0e;
+      color: white;
+      font-size: 12px;
   }
