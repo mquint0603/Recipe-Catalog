@@ -13,7 +13,7 @@ $(document).ready(function() {
             description: $("#description").val().trim(),
             category: $("#category").val().trim(),
             keywords: keywords,
-            username: $("#chef").val().tri()
+            username: $("#chef").val().trim()
         }
 
         $.ajax("/api/recipes", {
