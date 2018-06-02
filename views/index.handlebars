@@ -6,11 +6,14 @@
             {{#each recipes}}
                 <div class="row">  
                     <div class="col-sm-12">
-                        <a href="/api/recipes/{{id}}"><h3 class="accent">{{title}}</h3></a>
-                        <p>{{description}}</p>
+                         
+                        <a href="/recipes/id/{{id}}"><h3 class="accent">{{title}}</h3></a>
+                        <p>{{description}}   <button type="button" id="favorite" data-id="{{id}}" class="btn">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </button></p>
                     </div>
                 </div>
-                <br>
+                {{!-- <br> --}}
                 <hr>
             {{/each}}
 

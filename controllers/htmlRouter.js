@@ -15,10 +15,10 @@ module.exports = function(app) {
                 recipes: data
             }
 
-            console.log(hbsObject)
-    
+            
             res.render("index", hbsObject)
-
+            console.log(hbsObject.recipes)
+            
         })
     })
 
