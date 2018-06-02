@@ -37,19 +37,6 @@
             <div class="col-md-4 col-sm-12 welcome">
                     <h1 class="main-text">Welcome</h1>
                     <p id="welcome-p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus quod id cum. Similique, facere ipsa deleniti corrupti nulla placeat. Magni laboriosam tempora eius vero, sint accusantium aspernatur cum id praesentium!</p>
-                    
-                    <!-- <form id="collapsible-form" action="">
-                            <label class="accent" for="category">Category</label>
-                            <input class="form-control" id="category" type="text" placeholder="Search by Category">
-                            <label class="accent" for="chef">Chef</label>
-                            <input class="form-control" id="chef" type="text" placeholder="Search by Author">
-                            <label class="accent" for="keyword">Keyword</label>
-                            <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword">
-                            <br>
-                            <button type="submit" class="btn btn-lg btn-block mb-2"><span style="color:white">Submit</span></button>
-                            <br>
-                    </form>  -->
-                      
                     <button type="button" class="btn btn-lg btn-block post-recipe-btn post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
                     <button type="button" class="btn btn-lg btn-block search-btn search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
 
@@ -64,13 +51,13 @@
                         <div class="card">
                             <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="">Salads</a></p>
+                                <p class="card-text accent"><a href="" class="category-all" value="salad">Salads</a></p>
                             </div>
                         </div>
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="./images/dessert.jpg" alt="Card image cap">
+                            <img class="card-img-top category-all" value="dessert" src="./images/dessert.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text accent"><a href="">Desserts</a></p>
                             </div>
@@ -78,7 +65,7 @@
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="./images/soup.jpg" alt="Card image cap">
+                            <img class="card-img-top category-all" value="soup" src="./images/soup.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <p class="card-text accent"><a href="">Soups and Stews</a></p>
                             </div>
@@ -86,9 +73,9 @@
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="./images/appetizer.jpg" alt="Card image cap">
+                            <img class="card-img-top" value="appetizer" src="./images/appetizer.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="">Appetizers</a></p>
+                                <p class="card-text accent"><a href="" class="category-all">Appetizers</a></p>
                             </div>
                         </div>
                 </div>
@@ -105,14 +92,8 @@
             </div>
             <div class="modal-body">
                     <form action="">
-                        <!-- <label class="accent" for="category">Category</label>
-                        <input class="form-control" id="category" type="text" placeholder="Search by Category">
-                        <label class="accent" for="chef">Chef</label>
-                        <input class="form-control" id="chef" type="text" placeholder="Search by Author">
-                        <label class="accent" for="keyword">Keyword</label>
-                        <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword"> -->
                         <h3 class="accent">Search by...</h3>
-                        <select id="search-category" class="form-control" placeholder="Please Select">
+                        <select id="search-category" class="form-control">
                             <option selected>Please Select...</option>
                             <option value="category">category</option>
                             <option value="chef">chef</option>
@@ -197,28 +178,9 @@
 <!-- Bootstrap JS Links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script>
-    // $("#collapsible-form").hide()
-    $(".search-button").on("click", function() {
-        $("#search-box").hide()
-        $("#search-options").hide()
+<script type="text/javascript"> 
+    $("category-all").on("click", function() {
+        console.log($(this).val())
     })
-    
-    $("#search-category").on("click", function(){
-    //     // $("form").toggle()
-    //     // $("#postButton").toggle()
-    //     // $("#welcome-p").toggle()
-    //     // $("#searchButton").hide()
-
-        if($("#search-category").val() == "category") {
-            $("#search-box").hide()
-            $("#search-options").show()
-        } else {
-            $("#search-box").show()
-            $("#search-options").hide()
-        }
-    })
-
-
 </script>
 </html>
