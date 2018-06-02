@@ -1,6 +1,10 @@
 $(document).ready(function() {
 
-    var favorites = [];
+    'use strict'
+    
+    let localStorage = window.localStorage
+
+
 
     $("#postSubmitButton").on("click", function(event) {
 
@@ -42,8 +46,23 @@ $(document).ready(function() {
         window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
     })
 
-    $("#favorite").on("click", function(event) {
-        favorites.push[data-id];
+    $(".favorite").on("click", function(event) {
+
+        let favs;
+
+        if (localStorage.favs) {
+            favs = JSON.parse(localStorage.getItem("favs"))
+        } else {
+            favs = []
+        }
+
+        let fav = event.target.dataset.id
+
+        favs.push(fav)
+
+        localStorage.setItem("favs", JSON.stringify(favs))
+
+
     })
     
     $(".search-button").on("click", function() {
@@ -62,5 +81,4 @@ $(document).ready(function() {
         }
     })
 
-    
 })

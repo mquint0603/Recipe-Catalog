@@ -49,33 +49,33 @@
         <div class="row">
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
+                            <a href="recipes/category/salads"><img class="card-img-top" src="./images/salad.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="" class="category-all" value="salad">Salads</a></p>
+                                <p class="card-text accent">Salads</a></p>
                             </div>
                         </div>
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top category-all" value="dessert" src="./images/dessert.jpg" alt="Card image cap">
+                            <a href="recipes/category/desserts"><img class="card-img-top" src="./images/dessert.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="">Desserts</a></p>
+                                <p class="card-text accent">Desserts</a></p>
                             </div>
                         </div>
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top category-all" value="soup" src="./images/soup.jpg" alt="Card image cap">
+                            <a href="recipes/category/pasta"><img class="card-img-top category-all" src="./images/soup.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="">Soups and Stews</a></p>
+                                <p class="card-text accent">Pasta</a></p>
                             </div>
                         </div>
                 </div>
                 <div class="col-md-3">
                         <div class="card">
-                            <img class="card-img-top" value="appetizer" src="./images/appetizer.jpg" alt="Card image cap">
+                            <a href="recipes/category/appetizers"><img class="card-img-top" src="./images/appetizer.jpg" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text accent"><a href="" class="category-all">Appetizers</a></p>
+                                <p class="card-text accent">Appetizers</a></p>
                             </div>
                         </div>
                 </div>
@@ -102,6 +102,7 @@
                         <br>
                        
                         <select class="form-control" id="search-options" type="text" placeholder="Select Category">
+                            <option>Please Select...</option>
                             <option>Appetizers</option>
                             <option>Desserts</option>
                             <option>Pasta</option>
@@ -137,12 +138,13 @@
                         <input class="form-control" id="title" type="text" placeholder="Title">
 
                         <label class="accent" for="category">Category</label>
-                        <select class="form-control" id="category" type="text" placeholder="Select Category">
-                        <option>Appetizers</option>
-                        <option>Desserts</option>
-                        <option>Pasta</option>
-                        <option>Salads</option>
-                        <option>Entrees</option>
+                        <select class="form-control" id="category" type="text">
+                            <option>Please Select...</option>
+                            <option>Appetizers</option>
+                            <option>Desserts</option>
+                            <option>Pasta</option>
+                            <option>Salads</option>
+                            <option>Entrees</option>
                         </select>
 
                         <label class="accent" for="chef">Chef</label>
@@ -178,9 +180,4 @@
 <!-- Bootstrap JS Links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript"> 
-    $("category-all").on("click", function() {
-        console.log($(this).val())
-    })
-</script>
 </html>
