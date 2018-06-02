@@ -9,16 +9,22 @@ module.exports = function(app) {
     // Renders the list of all recipes on index.handlebars
     app.get("/recipes", (req, res) => {
 
-        db.Recipe.findAll({}).then((data) => {
+        db.Recipe.findAll({
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then((data) => {
 
             var hbsObject = {
                 recipes: data
             }
 
-            console.log(hbsObject)
-    
+            
             res.render("index", hbsObject)
-
+            console.log(hbsObject.recipes)
+            
         })
     })
 
@@ -31,6 +37,9 @@ module.exports = function(app) {
                     where: {
                         keyword: req.params.keyword
                     }
+                },
+                {
+                    model: db.Chef
                 }
             ]
         }).then(data => {
@@ -40,6 +49,77 @@ module.exports = function(app) {
             }
 
             res.render("index", hbsObject)
+        })
+    })
+
+    app.get("/recipes/chef/:chef", (req, res) => {
+        console.log(req.params.chef)
+
+        db.Chef.findOne({
+            where: {
+                username: req.params.chef
+            }
+        }).then(chef => {
+            db.Recipe.findAll({
+                where: {
+                    ChefId: chef.dataValues.id
+                },
+                include: [
+                    { model: db.Chef }
+                ]
+            }).then((recipes) => {
+
+                var hbsObject = {
+                    recipes: recipes
+                }
+
+                res.render("index", hbsObject)
+
+            })
+
+        })
+
+    })
+
+    app.get("/recipes/id/:id", (req, res) => {
+        db.Recipe.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then(recipe => {
+
+            var hbsObject = {
+                recipe: recipe[0].dataValues
+            }
+
+            res.render("recipe", hbsObject)
+        })
+    })
+
+    app.get("/recipes/category/:category", (req, res) => {
+
+        db.Recipe.findAll({
+            where: {
+                category: req.params.category
+            },
+            include: [
+                {
+                    model: db.Chef
+                }
+            ]
+        }).then(recipes => {
+            
+            var hbsObject = {
+                recipes: recipes
+            }
+
+            res.render("index", hbsObject)
+
         })
     })
 

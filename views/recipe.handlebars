@@ -1,0 +1,21 @@
+<div class="card" id="recipe-card" >
+    <div class="image-holder">
+        <img id="recipe-image" class="card-img-top" src="./images/pasta.jpg" alt="pasta_placeholder">
+    </div>
+    <div class="card-header">
+        <h4 id="recipe-name" class="card-title">
+            <button type="button" id="favorite" class="btn" aria-label="Heart">
+                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+            </button>{{title}}
+        </h4>
+        <h6 id="recipe-chef">by {{Chef.username}}</h6>
+        <h5 id="recipe-category"><i>{{category}}</i></h5>
+    </div>
+    <div class="card-body">
+        <h5>Ingredients</h5>
+        <p>{{ingredients}}</p>
+        {{!-- <p id="recipe-cooktime">Cook Time: <i>60min</i></p> --}}
+        <h5>Directions</h5>
+        <p id="recipe-directions">{{directions}}</p>
+    </div>
+</div>
