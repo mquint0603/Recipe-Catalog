@@ -1,7 +1,10 @@
 $(document).ready(function() {
 
+<<<<<<< HEAD
     var favorites = [];
 
+=======
+>>>>>>> 8c79afdb190afe48542e8931027abcc4de8d6e4c
     $("#postSubmitButton").on("click", function(event) {
 
         event.preventDefault();
