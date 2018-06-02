@@ -25,10 +25,10 @@
                             <a class="nav-link" href="/"><span style="color:white">Home</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
+                            <a class="nav-link post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
+                            <a class="nav-link search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
                         </li>
                 </ul>
             </nav>
@@ -50,8 +50,8 @@
                             <br>
                     </form>  -->
                       
-                    <button type="button" id="postButton" class="btn btn-lg btn-block post-recipe-btn" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
-                    <button type="button" id="searchButton" class="btn btn-lg btn-block search-btn" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
+                    <button type="button" class="btn btn-lg btn-block post-recipe-btn post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
+                    <button type="button" class="btn btn-lg btn-block search-btn search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
 
             </div>
             <div class="col-md-8 col-sm-12 header-image">
@@ -112,13 +112,24 @@
                         <label class="accent" for="keyword">Keyword</label>
                         <input class="form-control" id="keyword" type="text" placeholder="Search by Keyword"> -->
                         <h3 class="accent">Search by...</h3>
-                        <select id="search-category" class="form-control">
+                        <select id="search-category" class="form-control" placeholder="Please Select">
+                            <option selected>Please Select...</option>
                             <option value="category">category</option>
                             <option value="chef">chef</option>
                             <option value="keyword">keyword</option>
                         </select>
                         <br>
+                       
+                        <select class="form-control" id="search-options" type="text" placeholder="Select Category">
+                            <option>Appetizers</option>
+                            <option>Desserts</option>
+                            <option>Pasta</option>
+                            <option>Salads</option>
+                            <option>Entrees</option>
+                        </select>
+                        
                         <input type="text" id="search-box" class="form-control" placeholder="Search">
+                        
                         <br>
                         <button type="submit" class="btn btn-lg btn-block mb-2" id="searchSubmitButton"><span style="color:white">Submit</span></button>
                     </form>  
@@ -186,13 +197,28 @@
 <!-- Bootstrap JS Links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<!-- <script>
-    $("#collapsible-form").hide()
-    $("#searchButton").on("click", function(){
-        $("form").toggle()
-        $("#postButton").toggle()
-        $("#welcome-p").toggle()
-        $("#searchButton").hide()
+<script>
+    // $("#collapsible-form").hide()
+    $(".search-button").on("click", function() {
+        $("#search-box").hide()
+        $("#search-options").hide()
     })
-</script> -->
+    
+    $("#search-category").on("click", function(){
+    //     // $("form").toggle()
+    //     // $("#postButton").toggle()
+    //     // $("#welcome-p").toggle()
+    //     // $("#searchButton").hide()
+
+        if($("#search-category").val() == "category") {
+            $("#search-box").hide()
+            $("#search-options").show()
+        } else {
+            $("#search-box").show()
+            $("#search-options").hide()
+        }
+    })
+
+
+</script>
 </html>
