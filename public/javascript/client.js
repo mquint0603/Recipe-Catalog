@@ -28,9 +28,11 @@ $(document).ready(function() {
         data: recipePost
         }).then(
         function(data) {
-            console.log(data);
+            var postRoute = "/recipes/id/" + data.id;
 
-            window.location.replace("/recipes/id/" + data.id)
+            window.location.href = postRoute;
+
+            $("#post-form").trigger("reset");
         }
         );
     })
@@ -40,10 +42,23 @@ $(document).ready(function() {
 
         var searchQuery = {
             category: $("#search-category").val(),
-            search: $("#search-box").val().trim()
+            search: ""
         }
+
+        if($("#search-category").val() == "category") {
+            searchQuery.search = $("#search-options").val();
+        }else {
+            searchQuery.search = $("#search-box").val().trim();
+        }
+
+        var queryRoute = "/recipes/" + searchQuery.category + "/" + searchQuery.search;
+
+        console.log(queryRoute)
        
-        window.location.replace("recipes/" + searchQuery.category + "/" + searchQuery.search);
+        window.location.href = queryRoute
+
+        $("#search-form").trigger("reset");
+
     })
 
     $(".favorite").on("click", function(event) {
