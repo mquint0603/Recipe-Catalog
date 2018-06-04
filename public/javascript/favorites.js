@@ -17,6 +17,12 @@ $(document).ready(() =>{
         }
     }).then(res => {
         console.log(res)
-    })
 
+        var app1 = new Vue({
+            el: "#app-1",
+            data: {
+                recipes: res
+            }
+        })
+    })
 })
