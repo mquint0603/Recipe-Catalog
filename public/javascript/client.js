@@ -64,8 +64,6 @@ $(document).ready(function() {
     $(".favorite").on("click", function(event) {
         event.preventDefault()
 
-        console.log("Favorite button has been pressed.")
-
         let favs;
 
         if (localStorage.favs) {
