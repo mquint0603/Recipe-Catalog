@@ -3,11 +3,16 @@
     margin-bottom: 15px;
 }
 
-.nav-text{
+.nav-text {
     color: white;
     /* font-style: italic; */
     padding: 15px;
 }
+
+a:hover {
+    text-decoration: underline #e3d960;
+}
+
 
 h1, h3 {
     font-family: 'Playfair Display', serif;
