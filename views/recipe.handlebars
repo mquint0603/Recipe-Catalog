@@ -4,20 +4,13 @@
     </div>
     <div class="card-header">
         
-        {{!-- <div class="row"> --}}
+        <h4 id="recipe-name" class="card-title accent accent-large">{{recipe.title}}</h4>
+        <p>{{recipe.description}}</p>
+        <h6 id="recipe-chef">by <a href="/recipes/chef/{{recipe.Chef.username}}">{{recipe.Chef.username}}</a></h6>
 
-            {{!-- <div class="col-md-10"> --}}
-                <h4 id="recipe-name" class="card-title accent accent-large">{{recipe.title}}</h4>
-                <p>{{recipe.description}}</p>
-                <h6 id="recipe-chef">by {{recipe.Chef.username}}</h6>
-                <h5 id="recipe-category"><i>{{recipe.category}}</i></h5>
-                {{!-- <br> --}}
-                <button type="button" id="favorite" class="btn" aria-label="Heart">
-                    <i class="fas fa-heart"></i> Add to favorites
-                </button>
-        
-        {{!-- </div> --}}
-
+        <button type="button" id="favorite" class="btn" aria-label="Heart">
+            <i class="fas fa-heart"></i> Add to favorites
+        </button>
 
     </div>
     <div class="card-body">
@@ -29,37 +22,4 @@
     </div>
 </div>
 <br>
-<div class="row">
-    <div class="col-md-3">
-            <div class="card">
-                <a href="/recipes/category/salads"><img class="card-img-top" src="/images/salad.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text accent">Salads</a></p>
-                </div>
-            </div>
-    </div>
-    <div class="col-md-3">
-            <div class="card">
-                <a href="/recipes/category/desserts"><img class="card-img-top" src="/images/dessert.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text accent">Desserts</a></p>
-                </div>
-            </div>
-    </div>
-    <div class="col-md-3">
-            <div class="card">
-                <a href="/recipes/category/pasta"><img class="card-img-top category-all" src="/images/soup.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text accent">Pasta</a></p>
-                </div>
-            </div>
-    </div>
-    <div class="col-md-3">
-            <div class="card">
-                <a href="/recipes/category/appetizers"><img class="card-img-top" src="/images/appetizer.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <p class="card-text accent">Appetizers</a></p>
-                </div>
-            </div>
-    </div>
-</div>
+
