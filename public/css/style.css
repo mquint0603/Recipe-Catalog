@@ -115,6 +115,9 @@ h1, h3 {
           display: none;
       }
 
+      .sidebar {
+        display: none;
+    }
   }
 
   @media screen and (max-width: 575px){
@@ -123,7 +126,10 @@ h1, h3 {
         height: 200px;
         overflow: hidden;
       }
-      .sidebar {
-        display: none;
+
+    .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
     }
   }
