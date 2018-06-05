@@ -20,10 +20,8 @@ module.exports = function(app) {
             var hbsObject = {
                 recipes: data
             }
-
-            
+ 
             res.render("index", hbsObject)
-            console.log(hbsObject.recipes)
             
         })
     })
@@ -52,8 +50,8 @@ module.exports = function(app) {
         })
     })
 
+    // Gets and renders all recipes by a specific chef
     app.get("/recipes/chef/:chef", (req, res) => {
-        console.log(req.params.chef)
 
         db.Chef.findOne({
             where: {
@@ -81,6 +79,7 @@ module.exports = function(app) {
 
     })
 
+    // Gets and renders the page for a specific recipe
     app.get("/recipes/id/:id", (req, res) => {
         db.Recipe.findAll({
             where: {

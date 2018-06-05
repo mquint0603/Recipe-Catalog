@@ -1,28 +1,33 @@
-$(document).ready(() =>{
+let localStorage = window.localStorage
 
-    let localStorage = window.localStorage
+let favs;
 
-    let favs;
+if (localStorage.favs) {
+    favs = JSON.parse(localStorage.favs)
+} else {
+    alert("Sorry you don't have any favorites currently")
+}
 
-    if (localStorage.favs) {
-        favs = JSON.parse(localStorage.favs)
-    } else {
-        alert("Sorry you don't have any favorites currently")
+$.ajax("/api/recipes/favorites", {
+    type: "POST",
+    data: {
+        favorites: favs
     }
-
-    $.ajax("/api/recipes/favorites", {
-        type: "POST",
+}).then(res => {
+    var app1 = new Vue({
+        el: "#app-1",
         data: {
-            favorites: favs
-        }
-    }).then(res => {
-        console.log(res)
-
-        var app1 = new Vue({
-            el: "#app-1",
-            data: {
-                recipes: res
+            recipes: res
+        },
+        methods: {
+            deleteFav: function(event) {
+                let recipeId = event.target.dataset.id
+                let favs = JSON.parse(localStorage.favs)
+                let index = favs.indexOf(recipeId)
+                favs.splice(index, 1);
+                localStorage.setItem('favs', JSON.stringify(favs))
+                window.location.reload()
             }
-        })
+        }
     })
 })
