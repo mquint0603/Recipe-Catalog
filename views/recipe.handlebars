@@ -15,8 +15,11 @@
     </div>
     <div class="card-body">
         <h5>Ingredients</h5>
-        <p>{{recipe.ingredients}}</p>
-        {{!-- <p id="recipe-cooktime">Cook Time: <i>60min</i></p> --}}
+        <ul>
+            {{#each recipe.ingredients}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
         <h5>Directions</h5>
         <p id="recipe-directions">{{recipe.directions}}</p>
     </div>
