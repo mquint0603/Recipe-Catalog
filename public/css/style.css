@@ -87,12 +87,43 @@ h1, h3 {
     height: 300px;
     overflow: hidden;
   }
-  .card-img-top {
+
+  #homepage-thumbs {
       width: 100%;
+      height: auto;
+  }
+
+  .card-img-top {
+      height: 100%;
+      width: auto;
   }
 
   #favorite {
       background-color: #fa4e0e;
       color: white;
       font-size: 12px;
+  }
+
+  @media screen and (max-width: 768px){
+    .image-holder {
+        /* background-image: url("../images/pasta.jpg"); */
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .header-image {
+          display: none;
+      }
+
+  }
+
+  @media screen and (max-width: 575px){
+    .image-holder {
+        /* background-image: url("../images/pasta.jpg"); */
+        height: 200px;
+        overflow: hidden;
+      }
+      .sidebar {
+        display: none;
+    }
   }
