@@ -11,7 +11,7 @@ $(document).ready(function() {
         event.preventDefault();
         
         let keywordString = $("#keyword").val().trim();
-        let keywords = keywordString.split(",")
+        let keywords = keywordString.split(",");
 
         var recipePost = {
             title: $("#title").val().trim(),
@@ -21,7 +21,7 @@ $(document).ready(function() {
             category: $("#category").val().trim(),
             keywords: keywords,
             username: $("#chef").val().trim()
-        }
+        };
 
         $.ajax("/api/recipes", {
         type: "POST",
@@ -33,17 +33,16 @@ $(document).ready(function() {
             window.location.href = postRoute;
 
             $("#post-form").trigger("reset");
-        }
-        );
-    })
+        });
+    });
 
     $("#searchSubmitButton").on("click", function(event) {
-        event.preventDefault()
+        event.preventDefault();
 
         var searchQuery = {
             category: $("#search-category").val(),
             search: ""
-        }
+        };
 
         if($("#search-category").val() == "category") {
             searchQuery.search = $("#search-options").val();
@@ -52,10 +51,8 @@ $(document).ready(function() {
         }
 
         var queryRoute = "/recipes/" + searchQuery.category + "/" + searchQuery.search;
-
-        console.log(queryRoute)
        
-        window.location.href = queryRoute
+        window.location.href = queryRoute;
 
         $("#search-form").trigger("reset");
 
@@ -84,22 +81,22 @@ $(document).ready(function() {
         
 
 
-    })
+    });
     
     $(".search-button").on("click", function() {
-        $("#search-box").hide()
-        $("#search-options").hide()
-    })
+        $("#search-box").hide();
+        $("#search-options").hide();
+    });
     
     $("#search-category").on("click", function(){
 
         if($("#search-category").val() == "category") {
-            $("#search-box").hide()
-            $("#search-options").show()
+            $("#search-box").hide();
+            $("#search-options").show();
         } else {
-            $("#search-box").show()
-            $("#search-options").hide()
-        }
-    })
+            $("#search-box").show();
+            $("#search-options").hide();
+        };
+    });
 
-})
+});
