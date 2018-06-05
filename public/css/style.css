@@ -96,3 +96,9 @@ h1, h3 {
       color: white;
       font-size: 12px;
   }
+
+  .remove-fav {
+    background-color: #fa4e0e;
+    color: white;
+    font-size: 12px;
+}

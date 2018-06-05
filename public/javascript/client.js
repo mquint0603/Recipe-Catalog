@@ -74,9 +74,14 @@ $(document).ready(function() {
 
         let fav = event.target.dataset.id
 
-        favs.push(fav)
+        if (favs.includes(fav)) {
+            alert("You have already added this recipe to your favorites.")
+        } else {
+            favs.push(fav)
+            localStorage.setItem("favs", JSON.stringify(favs))
+        }
 
-        localStorage.setItem("favs", JSON.stringify(favs))
+        
 
 
     })
