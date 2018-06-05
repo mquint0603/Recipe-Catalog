@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Receipe Catalog</title>
+    <title>Recipe Catalog</title>
     <!-- {{!-- Bootstrap Style --}} -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- {{!-- Custom Style --}} -->
@@ -22,13 +22,16 @@
         <a href="/"><h1 class="nav-text">Recipe Catalog</h1></a>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="/"><span style="color:white">Home</span></a>
+                <a class="nav-link search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
+                <a class="nav-link" href="/recipes"><span style="color:white">All Recipes</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/favorites"><span style="color:white">Favorites</span></a>
             </li>
         </ul>
     </nav>
