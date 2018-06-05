@@ -101,4 +101,11 @@ $(document).ready(function() {
         };
     });
 
+    $(".btn").mouseenter(function(){
+        $(this).animate({ opacity: 0.7 }, 0);
+    })
+    .mouseleave(function() {
+        $(this).animate({ opacity: 1.0 }, 0);
+    });
+    
 });

@@ -92,8 +92,25 @@ module.exports = function(app) {
             ]
         }).then(recipe => {
 
+            easierRec = recipe[0].dataValues
+
+            var recipeObj = {
+                id: easierRec.id,
+                title: easierRec.title,
+                ingredients: [],
+                description: easierRec.description,
+                directions: easierRec.directions,
+                category: easierRec.category,
+                ChefId: easierRec.ChefId,
+                Chef: {
+                    username: easierRec.Chef.dataValues.username
+                }
+            }
+
+            recipeObj.ingredients = easierRec.ingredients.split(",")
+
             var hbsObject = {
-                recipe: recipe[0].dataValues
+                recipe: recipeObj
             }
 
             res.render("recipe", hbsObject)
