@@ -61,6 +61,7 @@ $(document).ready(function() {
     $(".favorite").on("click", function(event) {
         event.preventDefault()
 
+
         let favs;
 
         if (localStorage.favs) {
