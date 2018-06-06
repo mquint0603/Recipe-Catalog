@@ -10,172 +10,176 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- {{!-- JQuery Link --}} -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <!-- Icons stylesheet
-    <link href="/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet"> -->
-    <!-- {{!-- Clinet.js Link --}} -->
+
     <script type="text/javascript" src="/javascript/client.js"></script>
 </head>
 <body>
     <div class="container">
 
-            <nav class="col-lg-12 navbar">
-                <a href="/"><h1 class="nav-text">Recipe Catalog</h1></a>
-                <ul class="nav nav-list justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/recipes"><span style="color:white">All Recipes</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/favorites.html"><span style="color:white">Favorites</span></a>
-                    </li>
-                </ul>
-            </nav>
+        <nav class="col-lg-12 navbar">
+            <a href="/"><h1 class="nav-text">Recipe Catalog</h1></a>
+            <ul class="nav nav-list justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a Recipe</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recipes"><span style="color:white">All Recipes</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/favorites.html"><span style="color:white">Favorites</span></a>
+                </li>
+            </ul>
+        </nav>
         
         <div class="row">
             <div class="col-md-4 col-sm-12 welcome">
-                    <h1 class="main-text">Welcome</h1>
-                    <p id="welcome-p">Find, share, and save cooking inspiration. Discover recipes for your occasion, search by chef, or by ingredients. 
-                    </p>
-                    <button type="button" class="btn btn-lg btn-block post-recipe-btn post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
-                    <button type="button" class="btn btn-lg btn-block search-btn search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
-
+                <h1 class="main-text">Welcome</h1>
+                <p id="welcome-p">Find, share, and save cooking inspiration. Discover recipes for your occasion, search by chef, or by ingredients. 
+                </p>
+                <button type="button" class="btn btn-lg btn-block post-recipe-btn post-button" href="#postModal" data-toggle="modal" data-target="#postModal"><span style="color:white">Post a recipe</span></button>
+                <button type="button" class="btn btn-lg btn-block search-btn search-button" href="#searchModal" data-toggle="modal" data-target="#searchModal"><span style="color:white">Search</span></button>  
             </div>
             <div class="col-md-8 col-sm-12 header-image">
                 <img class="header-image" src="./images/pasta-main.jpg" alt="">
             </div>
         </div>  
+
         <br>
+
         <div class="row">
             <div class="col-sm-6 col-md-3">
-                    <div class="card">
-                        <a href="recipes/category/salads"><img class="card-img-top" id="homepage-thumbs" src="./images/salad.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text accent">Salads</a></p>
-                        </div>
+                <div class="card">
+                    <a href="recipes/category/salads"><img class="card-img-top" id="homepage-thumbs" src="./images/salad.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text accent">Salads</a></p>
                     </div>
+                </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                    <div class="card">
-                        <a href="recipes/category/desserts"><img class="card-img-top" id="homepage-thumbs" src="./images/dessert.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text accent">Desserts</a></p>
-                        </div>
+                <div class="card">
+                    <a href="recipes/category/desserts"><img class="card-img-top" id="homepage-thumbs" src="./images/dessert.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text accent">Desserts</a></p>
                     </div>
+                </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                    <div class="card">
-                        <a href="recipes/category/entrees"><img class="card-img-top category-all" id="homepage-thumbs" src="./images/pasta-thumb.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text accent">Entrees</a></p>
-                        </div>
+                <div class="card">
+                    <a href="recipes/category/entrees"><img class="card-img-top category-all" id="homepage-thumbs" src="./images/pasta-thumb.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text accent">Entrees</a></p>
                     </div>
+                </div>
             </div>
             <div class="col-sm-6 col-md-3">
-                    <div class="card">
-                        <a href="recipes/category/appetizers"><img class="card-img-top" id="homepage-thumbs" src="./images/appetizer.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text accent">Appetizers</a></p>
-                        </div>
+                <div class="card">
+                    <a href="recipes/category/appetizers"><img class="card-img-top" id="homepage-thumbs" src="./images/appetizer.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text accent">Appetizers</a></p>
                     </div>
+                </div>
             </div>
         </div>
 
 <!-- Modals _____________________________________________________________________________________________ -->
-    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                    <form id="search-form">
-                        <h3 class="accent">Search by...</h3>
-                        <select id="search-category" class="form-control">
-                            <option selected>Please Select...</option>
-                            <option value="category">category</option>
-                            <option value="chef">chef</option>
-                            <option value="keyword">keyword</option>
-                        </select>
-                        <br>
-                       
-                        <select class="form-control" id="search-options" type="text" placeholder="Select Category">
-                            <option>Please Select...</option>
-                            <option>Appetizers</option>
-                            <option>Desserts</option>
-                            <option>Pasta</option>
-                            <option>Salads</option>
-                            <option>Entrees</option>
-                        </select>
+
+        <!-- Search Modal ____________________________________________________________________________________ -->
+
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="search-form">
+                            <h3 class="accent">Search by...</h3>
+                            <select id="search-category" class="form-control">
+                                <option selected>Please Select...</option>
+                                <option value="category">category</option>
+                                <option value="chef">chef</option>
+                                <option value="keyword">keyword</option>
+                            </select>
+                            <br>
                         
-                        <input type="text" id="search-box" class="form-control" placeholder="Search">
-                        
-                        <br>
-                        <button type="submit" class="btn btn-lg btn-block mb-2" id="searchSubmitButton"><span style="color:white">Submit</span></button>
-                    </form>  
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+                            <select class="form-control" id="search-options" type="text" placeholder="Select Category">
+                                <option>Please Select...</option>
+                                <option>Appetizers</option>
+                                <option>Desserts</option>
+                                <option>Pasta</option>
+                                <option>Salads</option>
+                                <option>Entrees</option>
+                            </select>
+                            
+                            <input type="text" id="search-box" class="form-control" placeholder="Search">
+                            
+                            <br>
+                            <button type="submit" class="btn btn-lg btn-block mb-2" id="searchSubmitButton"><span style="color:white">Submit</span></button>
+                        </form>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <p class="accent" id="postModalLabel">Post a Recipe</p>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                    <form id="post-form">
-                        <label class="accent" for="title">Title</label>
-                        <input class="form-control" id="title" type="text" placeholder="Title">
+        <!-- Post Modal ____________________________________________________________________________________  -->
 
-                        <label class="accent" for="category">Category</label>
-                        <select class="form-control" id="category" type="text">
-                            <option>Please Select...</option>
-                            <option>Appetizers</option>
-                            <option>Desserts</option>
-                            <option>Pasta</option>
-                            <option>Salads</option>
-                            <option>Entrees</option>
-                        </select>
+        <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <p class="accent" id="postModalLabel">Post a Recipe</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="post-form">
+                            <label class="accent" for="title">Title</label>
+                            <input class="form-control" id="title" type="text" placeholder="Title">
 
-                        <label class="accent" for="chef">Chef</label>
-                        <input class="form-control" id="chef" type="text" placeholder="Your name">
+                            <label class="accent" for="category">Category</label>
+                            <select class="form-control" id="category" type="text">
+                                <option>Please Select...</option>
+                                <option>Appetizers</option>
+                                <option>Desserts</option>
+                                <option>Pasta</option>
+                                <option>Salads</option>
+                                <option>Entrees</option>
+                            </select>
 
-                        <label class="accent" for="keyword">Keywords</label>
-                        <input class="form-control" id="keyword" type="text" placeholder="Separate keywords with commas">
+                            <label class="accent" for="chef">Chef</label>
+                            <input class="form-control" id="chef" type="text" placeholder="Your name">
 
-                        <label for="ingredients" class="col-form-label accent">Ingredients:</label>
-                        <textarea class="form-control" id="ingredients" style="height:250px;"></textarea>
+                            <label class="accent" for="keyword">Keywords</label>
+                            <input class="form-control" id="keyword" type="text" placeholder="Separate keywords with commas">
 
-                        <label for="directions" class="col-form-label accent">Directions:</label>
-                        <textarea class="form-control" id="directions" style="height:250px;"></textarea>
+                            <label for="ingredients" class="col-form-label accent">Ingredients:</label>
+                            <textarea class="form-control" id="ingredients" style="height:250px;"></textarea>
 
-                        <label for="description" class="col-form-label accent">Description:</label>
-                        <textarea class="form-control" id="description" style="height:250px;"></textarea>
+                            <label for="directions" class="col-form-label accent">Directions:</label>
+                            <textarea class="form-control" id="directions" style="height:250px;"></textarea>
 
-                        <br>
-                        <button type="submit" class="btn btn-lg btn-block mb-2" id="postSubmitButton"><span style="color:white">Submit</span></button>
-                    </form>  
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+                            <label for="description" class="col-form-label accent">Description:</label>
+                            <textarea class="form-control" id="description" style="height:250px;"></textarea>
+
+                            <br>
+                            <button type="submit" class="btn btn-lg btn-block mb-2" id="postSubmitButton"><span style="color:white">Submit</span></button>
+                        </form>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 <!-- __________________________________ container closing tag  -->
     </div>
 
