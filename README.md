@@ -8,7 +8,7 @@ Picknic is recipe sharing community app. Users are able to post recipes, then se
 * HTML5
 * CSS3
 * Vue.js
-* Sequelized
+* Sequelize
 * Express
 * JQuery
 * MySQL
